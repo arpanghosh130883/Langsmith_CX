@@ -19,7 +19,7 @@ from langchain_core.output_parsers import StrOutputParser
 load_dotenv()
 
 PDF_PATH = "islr.pdf"  # change to your file
-INDEX_ROOT = Path(".indices")
+INDEX_ROOT = Path(".indices") # We are saving the indexes in the .indices file. This is improveing the latency and retreival is faster. One time we are generating the indices and later we are using the same indices.
 INDEX_ROOT.mkdir(exist_ok=True)
 
 # ----------------- helpers (traced) -----------------
