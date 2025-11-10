@@ -1,5 +1,13 @@
 # pip install -U langchain langchain-openai langchain-community faiss-cpu pypdf python-dotenv langsmith
 
+# in the .env file add below parameters
+'''
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+LANGCHAIN_API_KEY=your_new_key_here
+LANGCHAIN_PROJECT=my_project_name
+'''
+
 import os
 import json
 import hashlib
