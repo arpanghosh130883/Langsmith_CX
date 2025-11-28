@@ -151,9 +151,35 @@ def setup_pipeline_and_query(
         config={"run_name": "pdf_rag_query", "tags": ["qa"], "metadata": {"k": 4}}
     )
 
-# ----------------- CLI -----------------
+# ----------------- CLI ------ the terminal will NOT exit till we type exit or quit -----------
+'''
 if __name__ == "__main__":
     print("PDF RAG ready. Ask a question (or Ctrl+C to exit).")
     q = input("\nQ: ").strip()
     ans = setup_pipeline_and_query(PDF_PATH, q)
     print("\nA:", ans)
+'''
+if __name__ == "__main__":
+    print("MC PDF RAG ready.")
+    print("Ask your questions about the PDF.")
+    print("Type 'exit' or 'quit' to stop.\n")
+
+    while True:
+        q = input("Q: ").strip()
+
+        # ---------------------------
+        # here to exit
+        # ---------------------------
+        if q.lower() in {"exit", "quit"}:
+            print("Goodbye 👋")
+            break
+
+        if q == "":
+            continue  
+
+       
+        try:
+            ans = setup_pipeline_and_query(PDF_PATH, q)
+            print("\nA:", ans, "\n")
+        except Exception as e:
+            print("\n[ERROR]", e, "\n")
